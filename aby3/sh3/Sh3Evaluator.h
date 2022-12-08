@@ -74,6 +74,25 @@ namespace aby3
 			const sf64<D>& B,
 			sf64<D>& C)
 		{
+   			//  std::cout << "D in mul_test result : " << D << std::endl;
+
+			// std::cout << "Party " << mPartyIdx << "A[0] in sf64 "
+			// 		<< "is " << *(u64*)(A.mShare.mData[0]) << "."
+			// 		<< std::endl;
+			// std::cout << "Party " << mPartyIdx << "A[1] in sf64 "
+			// 		<< "is " << *(u64*)(A.mShare.mData[1]) << "."
+			// 		<< std::endl;
+
+			std::cout << "Party" << mPartyIdx << ": A[0] in sf64 "
+					<< "is " << (A.mShare.mData[0]) << "."
+					<<" A[1] in sf64 is "<< (A.mShare.mData[1]) << "."
+					<< std::endl;
+
+			std::cout << "Party" << mPartyIdx << ": B[0] in sf64 "
+					<< "is " << (B.mShare.mData[0]) << "."
+					<<" B[1] in sf64 is "<< (B.mShare.mData[1]) << "."
+					<< std::endl;
+		
 			return asyncMul(dependency, A.i64Cast(), B.i64Cast(), C.i64Cast(), D);
 		}
 

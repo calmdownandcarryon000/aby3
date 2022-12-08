@@ -399,6 +399,13 @@ namespace aby3
                 //mShareGen.mPrevCommon.get(pair.mR.data(), pair.mR.size());
                 mShareGen.mNextCommon.get(pair.mRTrunc[0].data(), pair.mRTrunc[0].size());
                 mShareGen.mPrevCommon.get(pair.mRTrunc[1].data(), pair.mRTrunc[1].size());
+                std::cout << "Party " << mPartyIdx << "mRTrunc[0] "
+                          << "is " << *(u64*)(pair.mRTrunc[0].data()) << "."
+                          << std::endl;
+
+                std::cout << "Party " << mPartyIdx << "mRTrunc[1] "
+                          << "is " << *(u64*)(pair.mRTrunc[1].data()) << "."
+                          << std::endl;
                 for (u64 i = 0; i < pair.mR.size(); ++i)
                 {
                     auto& t0 = pair.mRTrunc[0](i);
@@ -456,7 +463,15 @@ namespace aby3
                 + A.mData[1] * B.mData[0];
             //+ mShareGen.getShare();
 
+            std::cout << "Party" << mPartyIdx << ": A[0] in si64 "
+					<< "is " << (A.mData[0]) << "."
+					<<" A[1] in sf64 is "<< (A.mData[1]) << "."
+					<< std::endl;
 
+			std::cout << "Party" << mPartyIdx << ": B[0] in si64 "
+					<< "is " << (B.mData[0]) << "."
+					<<" B[1] in sf64 is "<< (B.mData[1]) << "."
+					<< std::endl;
         //oc::ostreamLock(std::cout) << "ab " << mPartyIdx << ": " << abMinusR << " - "<< truncationTuple.mR(0) << 
         //	" = " << abMinusR - truncationTuple.mR(0) << std::endl;
 

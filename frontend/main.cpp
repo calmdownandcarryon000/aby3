@@ -289,8 +289,9 @@ void fixedPointOperations(u64 partyIdx)
 
         // We can add and multiply
         sf64<D32> addition = sharedFixedInt;
-        sf64<D32> prod = addition + addition;
-        // eval.asyncMul(runtime, addition, sharedFixedInt, prod).get();
+        // sf64<D32> prod = addition + addition;
+        sf64<D32> prod ;
+        eval.asyncMul(runtime, addition, sharedFixedInt, prod).get();
 
         f64<D32> result;
         enc.revealAll(runtime, prod, result).get();
